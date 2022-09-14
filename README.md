@@ -211,6 +211,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
+Andreu Monforte Piñana - (https://github.com/Copyrighter22)
 
 Ismael Semmar Galvez - (https://github.com/Ism1tha)
 
