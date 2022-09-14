@@ -23,7 +23,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -119,28 +118,27 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+* python3.8 and install the requirements:
+
   ```sh
-  npm install npm@latest -g
+  pip install -r requirements.txt
   ```
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free API Key at [https://www.shodan.io](https://www.shodan.io)
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone git@github.com:AIA-Audit/AIA-DEV.git
    ```
-3. Install NPM packages
+3. Install dependencies
    ```sh
-   npm install
+   pip install -r requirements.txt
    ```
-4. Enter your API in `config.js`
+4. Enter your API KEY from Shodan in `config.json
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   "SHODAN_API_KEY": "ENTER YOUR API",
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
