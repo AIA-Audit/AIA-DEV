@@ -4,6 +4,7 @@ import time
 from colorama import Fore
 from beaupy.spinners import *
 from modules.scanner.configure import Configure
+from modules.scanner.shodan_scanner import ShodanScanner
 
 
 class MyPrompt(cmd.Cmd):
@@ -16,6 +17,7 @@ class MyPrompt(cmd.Cmd):
         return print('Unknown command, use help for more information')
 
     def do_audit(self, args):
+        audit_results = {"data": []}
         "Use 'audit [full/custom] to start an audit'"
         if args == "full":
             print("Full audit here")
@@ -28,13 +30,25 @@ class MyPrompt(cmd.Cmd):
             spinner_animation = ['🖥💣    🏢️ ', '🖥 💣   🏢️️ ', '🖥  💣  🏢️️ ', '🖥   💣 🏢️️ ', '🖥    💣🏢️️ ']
             spinner = Spinner(spinner_animation, "Starting the auditory..")
             spinner.start()
-
-            time.sleep(10)
-
+            time.sleep(3)
             spinner.stop()
             for item in items:
-                print(item)
-            #self.postloop()
+                if item == "nmap Scan - Full scan":
+                    nmap_data = {"nmap": "empty"}
+                    audit_results["data"].append(nmap_data)
+                elif item == "Shodan API":
+                    shodan_data = {"shodan": ShodanScanner.main()}
+                    audit_results["data"].append(shodan_data)
+                elif item == "theHarvester":
+                    theharvester_data = {"theHarvester": "empty"}
+                    audit_results["data"].append(theharvester_data)
+                elif item == "Website admin login finder":
+                    admin_finder_data = {"admin_finder": "empty"}
+                    audit_results["data"].append(admin_finder_data)
+                elif item == "SSH-Audit":
+                    ssh_audit_data = {"ssh_audit": "empty"}
+                    audit_results["data"].append(ssh_audit_data)
+            # Export the results to PDF HERE
         else:
             print("Use 'audit [full/custom] to start an audit'")
 
