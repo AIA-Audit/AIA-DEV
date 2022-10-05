@@ -1,12 +1,16 @@
 import sys
 import time
 import sqlite3
+import threading
 
 from colorama import Fore
 from modules.cmd import MyPrompt
 from clear_screen import clear
+from modules.flask.website import *
 
 is_loading = True
+website_thread = None
+
 
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -58,7 +62,7 @@ def show_loading():
 
 def start_loading():
     #Show AIA Audit loading..
-    #threading.Thread.start()
+    clear()
     show_loading()
     #Prepare SQLite database connection..
     con = sqlite3.connect("database.db")
@@ -92,7 +96,10 @@ def custom_clear():
           "                                                           \n" +
           "If you need help use " + Fore.BLUE + "help" + Fore.RESET + " on the command prompt.\n")
 
+
 if __name__ == "__main__":
-    clear()
+    # Start Flask webserver
+    website_thread = website_start()
+    # Start AIA-Audit Framework
     start_loading()
 

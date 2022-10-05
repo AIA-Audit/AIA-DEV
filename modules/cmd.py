@@ -4,7 +4,6 @@ import time
 from colorama import Fore
 from beaupy import *
 from beaupy.spinners import *
-
 from modules.scanner.host_discovery_scanner import HostDiscovery
 from modules.scanner.admin_finder_scanner import AdminFinderScanner
 from modules.scanner.configure import Configure
