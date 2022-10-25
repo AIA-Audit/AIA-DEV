@@ -47,10 +47,10 @@ class MyPrompt(cmd.Cmd):
                     ]
                     nmap_scan_type = select(nmap_scan_type_options, cursor='🖥  ', cursor_style='red')
                     if nmap_scan_type == "Scan my local network [24]":
-                        nmap_data = {"nmap": NmapScanner.scan_address("192.168.1.0", "/24")}
+                        nmap_data = {"nmap": NmapScanner.scan_address("192.168.202.0", "/24")}
                         audit_results["data"].append(nmap_data)
                     elif nmap_scan_type == "Scan only my device":
-                        nmap_data = {"nmap": NmapScanner.scan_address("192.168.1.42", "")}
+                        nmap_data = {"nmap": NmapScanner.scan_address("192.168.202.116", "")}
                         audit_results["data"].append(nmap_data)
                     elif nmap_scan_type == "Custom Network IP and range":
                         hosts_data = {"hosts": HostDiscovery.main("192.168.202.0", "/24")}

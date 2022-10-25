@@ -1,0 +1,7 @@
+__pycache__
+Thumbs
+*.db
+publish.js
+license
+node_modules/
+dist/
